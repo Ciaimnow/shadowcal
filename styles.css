@@ -1,0 +1,435 @@
+.contact-container{
+  min-height: 74vh; /* Full viewport height */
+  position: relative;
+}
+/*css for te second half of index html to add spacing*/
+.second-container
+{  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+  padding-top: 10px; /* Adjust the value as needed */
+  display: flex;
+  align-items: center; /* Vertically center items */
+  box-sizing: border-box;
+  margin-top: 50px; /* Adjust the value as needed */
+}
+h4 {
+  font-size: 40px; /* Adjust the font size */
+  color: white; /* Text color */
+  margin-bottom: 20px; /* Margin below h1 */
+  margin-top: -20px; /* Margin below h1 */
+  margin: 0 0 20px 0; /* Margin below h4 */
+
+}
+.video-container{
+  flex: 1;
+  margin-right: 20px;
+}
+video{ pointer-events: none; /* Prevent interaction if needed */}
+video::-moz-media-controls,video::-webkit-media-controls, video::-ms-media-controls {
+  display: none !important;
+}
+/*css for big website name next to logo*/
+.website-name {
+font-size: 20px;
+color:white;
+
+    font-weight: 700;
+padding-right:10px;
+margin-left: -15px;
+} 
+
+/*general navbar css*/
+.navbar {
+display: flex;
+justify-content: center;
+padding: 0 10px;
+font-size: 14px;
+}
+header {
+  background-color: #0e0e0e;
+  border-bottom: 1px solid #292929;
+  text-decoration: none;
+  padding-bottom: -10px;
+  padding-top: 9px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 5px; 
+      
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  color: rgb(194, 194, 194);
+}
+
+/*css for portfolio tracker*/
+nav ul > li:nth-child(3) 
+{  
+  display: inline-block;
+  background-color: rgb(36, 36, 36);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/*color and text change when hovering over portfolio tracker*/
+nav ul > li:nth-child(3):hover
+{
+  background-color:#ff960c;
+}
+nav ul > li:nth-child(3):hover > a {
+  color: black; /* Color of text when hovered */
+}
+/*css for other links, to add a yellow bottom when hvoered over*/
+nav ul > li:nth-child(4) > a:hover,
+nav ul > li:nth-child(5) > a:hover,
+nav ul > li:nth-child(6) > a:hover,
+nav ul > li:nth-child(7) > a:hover {  
+  border-bottom: 3px solid rgb(253, 220, 73);
+}
+/*css for get started button*/
+/*css for logo in navbar*/
+.logo img
+{
+margin-bottom:10px;
+vertical-align: middle; /* Adjust as needed: top, bottom, middle */
+max-width: 40px; /* Adjust the width as needed */
+height: auto; /* Ensures the image retains its aspect ratio */
+}
+
+/*connect button css*/
+#toggleTheme {
+  background-color: #ff9f21;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 17px;
+  font-size: 14px;
+  padding: 12px 20px; /* 10px vertical padding, 20px horizontal padding */
+  font-family: Verdana, sans-serif;
+  border: none; /* Removes border */
+  font-weight: bold;
+
+}
+
+#toggleTheme:hover {
+  background-color: #fbb355;
+  cursor: pointer;
+}
+/*css for trust, meta, coinbase, and other button */
+#binance {
+  background-color: #1d1d1d;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 17px;
+  font-size: 14px;
+  padding: 15px 20px; /* 15px vertical padding, 20px horizontal padding */
+  font-family: Verdana, sans-serif;
+  border: none; /* Removes border */    
+  position: relative;
+  height: 200px;              /* Fixed height for consistency */
+  width: 150px;               /* Fixed width for consistency */
+align-items: center;        /* Center items horizontally */
+justify-content: center;    /* Center items vertically */
+text-align: center;         /* Center text */
+}
+.button-container {
+  display: flex;              /* Use flexbox for button container */
+  align-items: center;        /* Center items horizontally */
+justify-content: center;    /* Center items vertically */
+text-align: center;         /* Center text */
+padding: 10px;
+gap: 10px;
+}
+#binance .text-top {
+  font-weight: bold;         /* Bold text */
+  align-items: center;        /* Center items horizontally */
+justify-content: center;    /* Center items vertically */
+text-align: center; 
+}
+#binance svg {
+  max-height: 115px; /* Adjust as needed */
+  max-height: 135px; /* Adjust as needed */  
+}
+
+#mySvg{  
+  margin-top: -24px; /* Move image up by 10px */
+    max-width: 105%; /* Ensure the logo fits within the button */
+margin-left: 10px;
+ 
+}
+#binance:hover
+{
+  border: 1px solid #ff960c;
+}
+#binance  .logo {
+  max-width: 100%; /* Ensure the logo fits within the button */
+  max-height: 100px; /* Adjust as needed */
+  margin-bottom: 10px; /* Space between logo and text */
+}
+/* Style for the bottom text and arrow */
+#binance .text-bottom {
+  display: flex;             /* Flexbox for horizontal layout */
+  align-items: center;       /* Center items vertically */
+  gap: 2px;                  /* Space between text and arrow */
+  color:white;
+justify-content: center;    /* Center items vertically */
+}
+
+/* Arrow styling */
+#binance .arrow {
+  fill: white;               /* Arrow color */
+font-size: 20px;
+}
+/*social media buttons css*/
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: .1%;
+  color: white;
+background-color: #ff960c;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+/*leaderboard csss for leaderboard page*/
+
+#leaderboard {
+  width: 70%;
+  margin: auto; /* Center the leaderboard on the page */
+  border-radius: 45px;
+  background-color: #111010;
+max-width: 700px;
+ 
+}
+
+table {
+  border-collapse: collapse;
+  text-align:center;
+align-items: center;
+}
+
+thead th {
+  background-color: #111010;
+  color: rgb(169, 169, 169);
+  padding: 10px;
+  border-top-left-radius: 30px; /* Radius for the top-left corner */
+  border-top-right-radius:30px; /* Radius for the top-right corner */
+  font-size: 15px
+ 
+}
+
+tbody td {
+  padding: 10px;
+  border-radius: 45px;
+  text-align: center;
+  
+}
+
+.entries {
+padding: 0px;
+
+}
+/*h2 font*/
+h2 {
+font-family: Georgia, serif;
+font-size: rem; /* Adjust the font size */
+color: white; /* Text color */
+margin-bottom: 10px; /* Margin below h1 */
+/* Additional styles */
+}
+h3 {
+  font-size: 50px; /* Adjust the font size */
+  color: white; /* Text color */
+  margin-bottom: 20px; /* Margin below h1 */
+display: inline-block;  
+margin-top: -20px; /* Margin below h1 */
+}
+
+/*container to center everything+ body*/
+.center-container {
+  text-align: center;
+  padding: 100px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  height:100%;
+  position: relative; /* Relative positioning for footer alignment */
+  justify-content: center;
+  align-items:center;
+}
+.maxwidth-container{max-width: 700px;}
+body {
+  background-color: #040307;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, sans-serif;
+  justify-content: center; /* Center aligns horizontally */
+  align-items: center; /* Center aligns vertically */
+  height:100%;
+}
+
+/*footer css*/
+footer {
+  background-color: #0e0e0e;
+  border-top: 1px solid #292929;
+  bottom: 0;
+  width: 100%;
+  position:sticky;
+  top: 100vh;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+padding-top: 20px;
+padding-bottom: 20px;
+
+}
+
+
+/*makes spacing between two text in footer normal*/
+.mobile-off-content{
+margin-top: -10px;
+}
+
+/*mobile styles 830 px and below*/
+@media (max-width: 500px) {
+.second-container
+{
+flex-direction: column;
+padding-bottom: 30px;
+}
+  .center-container{
+margin-top: -50px;
+}
+
+/*modified video to be smaller */
+.video-container video {
+  width: 300px; 
+  height: auto;
+ 
+}
+
+/*makes h3 text smaller for mobile*/
+h3 {
+  font-size: 30px; 
+}
+h4{
+  font-size: 30px; 
+
+}
+/*set cryptocalc image and logo left justified*/
+.navbar {
+  justify-content: center;
+  }
+  .website-name {
+    font-size: 30px;}
+
+  .button-container{
+    display: grid;
+    align-items:center;
+    justify-items:center; 
+    gap: 15px;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+
+.nav-links li:nth-child(3),
+.nav-links li:nth-child(4),
+.nav-links li:nth-child(5),
+.nav-links li:nth-child(6),
+.nav-links li:nth-child(7) 
+{
+    display: none;
+}
+
+
+.logo img{
+margin-bottom:10px;
+max-width: 62px; /* Adjust the width as needed */
+}
+#binance
+{width: 99%;}
+
+footer{display:none;}
+
+}
+/*CSS for devices > 500, only difference should be buttions*/
+/*_________________________________________*/
+@media (min-width: 501px) and (max-width: 999px){
+  .second-container
+  {
+  flex-direction: column;
+  padding-bottom: 30px;
+  }
+    .center-container{
+  margin-top: -50px;
+  }
+  
+  /*modified video to be smaller */
+  .video-container video {
+    width: 300px; 
+    height: auto;
+   
+  }
+  
+  /*makes h3 text smaller for mobile*/
+  h3 {
+    font-size: 30px; 
+  }
+  h4{
+    font-size: 30px; 
+  
+  }
+  /*set cryptocalc image and logo left justified*/
+  .navbar {
+    justify-content: center;
+    }
+    .website-name {
+      font-size: 30px;}
+  
+    .button-container{
+      display: grid;
+      align-items:center;
+      justify-items:center; 
+      gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+  
+  .nav-links li:nth-child(3),
+  .nav-links li:nth-child(4),
+  .nav-links li:nth-child(5),
+  .nav-links li:nth-child(6),
+  .nav-links li:nth-child(7) 
+  {
+      display: none;
+  }
+  
+  
+  .logo img{
+  margin-bottom:10px;
+  max-width: 62px; /* Adjust the width as needed */
+  }
+  #binance
+  {width: 160px;}
+  
+  footer{display:none;}
+  
+  }
+  
